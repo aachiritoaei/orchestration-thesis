@@ -37,7 +37,7 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteAll")
-    public Map<String, Object> deleteAllTransactions() {
+    public Map<String, Object> deleteAllUsers() {
         userRepository.deleteAll();
 
         Map<String, Object> response = new LinkedHashMap<>();
@@ -47,7 +47,7 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<IotUser> getAllTransactions() {
+    public List<IotUser> getAllUsers() {
 
         return userRepository.findAll();
     }
