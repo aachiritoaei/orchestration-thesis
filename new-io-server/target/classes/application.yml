@@ -5,3 +5,9 @@ kafka:
   bootstrap-servers: localhost:9092
   topic:
     kafka-io: kafka-io
+
+spring:
+  data:
+    cassandra:
+      consistency-level: three
+      serial-consistency-level: three

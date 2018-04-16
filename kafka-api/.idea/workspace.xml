@@ -277,7 +277,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new-cloud-gateway" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelWidth1" value="75" />
@@ -411,12 +411,12 @@
       <workItem from="1522500385690" duration="471000" />
       <workItem from="1523344027769" duration="2202000" />
       <workItem from="1523353790238" duration="719000" />
-      <workItem from="1523882709000" duration="26000" />
+      <workItem from="1523882709000" duration="911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5531000" />
+    <option name="totallyTimeSpent" value="6416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />

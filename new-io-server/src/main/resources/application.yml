@@ -5,3 +5,4 @@ kafka:
   bootstrap-servers: localhost:9092
   topic:
     kafka-io: kafka-io
+
