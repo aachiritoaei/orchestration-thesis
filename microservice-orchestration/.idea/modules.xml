@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud-gateway/cloud-gateway.iml" filepath="$PROJECT_DIR$/cloud-gateway/cloud-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discovery/discovery.iml" filepath="$PROJECT_DIR$/discovery/discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io-server/io-server.iml" filepath="$PROJECT_DIR$/io-server/io-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meta/meta.iml" filepath="$PROJECT_DIR$/meta/meta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-orchestration.iml" filepath="$PROJECT_DIR$/microservice-orchestration.iml" />
+    </modules>
+  </component>
+</project>
