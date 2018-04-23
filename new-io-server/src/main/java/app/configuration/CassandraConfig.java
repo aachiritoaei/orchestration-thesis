@@ -60,6 +60,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
     protected QueryOptions getQueryOptions() {
         QueryOptions queryOptions = new QueryOptions();
         queryOptions.setConsistencyLevel(ConsistencyLevel.ALL);
+        queryOptions.
         return queryOptions;
     }
 }
