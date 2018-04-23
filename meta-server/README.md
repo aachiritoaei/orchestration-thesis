@@ -1,6 +1,0 @@
-# run postgres with this command
-docker run -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres:latest
-
-docker stop $(docker ps -aq) 
-docker rm $(docker ps -aq)
-docker rmi $(docker images -q)
