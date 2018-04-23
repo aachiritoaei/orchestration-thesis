@@ -12,5 +12,5 @@ eureka:
 
 zuul:
   routes:
-    path:/measurements/**
+    path: /measurements/**
     serviceId: io-server
