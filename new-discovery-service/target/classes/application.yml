@@ -2,12 +2,9 @@ server:
   port: 8761
 
 eureka:
-  instance:
-    hostname: discovery
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://discovery:${server.port}/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
-spring.cloud.config.discovery.enabled: true
