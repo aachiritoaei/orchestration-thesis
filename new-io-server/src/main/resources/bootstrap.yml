@@ -1,3 +1,18 @@
+server:
+  port: 5000
+
 spring:
   application:
     name: io-server
+
+kafka:
+  bootstrap-servers: localhost:9092
+  topic:
+    kafka-io: kafka-io
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/

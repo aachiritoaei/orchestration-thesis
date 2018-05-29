@@ -1,6 +1,9 @@
 package app.domain;
 
 import com.datastax.driver.core.DataType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
@@ -14,6 +17,8 @@ TODO: add dates and findByDates
 */
 
 @Table("measurements")
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Measurement implements Serializable {
 
     @PrimaryKey
@@ -21,27 +26,38 @@ public class Measurement implements Serializable {
     private UUID id;
     private String devEui;
     private String dataType;
-    private String rawData;
-    private String jsonData;
+    private String data;
+    private String timeStamp;
 
     public Measurement() {
         this.id = UUID.randomUUID();
     }
 
-    public Measurement(String devEui, String dataType, String rawData, String jsonData) {
+    public Measurement(String devEui, String dataType, String data, String timeStamp) {
         this.id = UUID.randomUUID();
         this.devEui = devEui;
         this.dataType = dataType;
-        this.rawData = rawData;
-        this.jsonData = jsonData;
+        this.data = data;
+        this.timeStamp = timeStamp;
     }
 
-    public UUID getUuid() {
+    @Override
+    public String toString() {
+        return "Measurement{" +
+                "id=" + id +
+                ", devEui='" + devEui + '\'' +
+                ", dataType='" + dataType + '\'' +
+                ", data='" + data + '\'' +
+                ", timeStamp='" + timeStamp + '\'' +
+                '}';
+    }
+
+    public UUID getId() {
         return id;
     }
 
-    public void setUuid(UUID uuid) {
-        this.id = uuid;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getDevEui() {
@@ -60,19 +76,19 @@ public class Measurement implements Serializable {
         this.dataType = dataType;
     }
 
-    public String getRawData() {
-        return rawData;
+    public String getData() {
+        return data;
     }
 
-    public void setRawData(String rawData) {
-        this.rawData = rawData;
+    public void setData(String data) {
+        this.data = data;
     }
 
-    public String getJsonData() {
-        return jsonData;
+    public String getTimeStamp() {
+        return timeStamp;
     }
 
-    public void setJsonData(String jsonData) {
-        this.jsonData = jsonData;
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
     }
 }
