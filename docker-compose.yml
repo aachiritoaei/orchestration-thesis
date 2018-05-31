@@ -1,0 +1,32 @@
+version: '2'
+services:
+  discovery-host:
+    image: new-discovery-server
+    ports:
+      - "8761:8761"
+  gateway-host:
+    image: new-api-gateway
+    ports:
+      - "5000:5000"
+    links:
+      - discovery-host:discovery-host
+    depends_on:
+      - discovery-host
+  postgres-host:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres
+  meta-host:
+    image: new-meta-server
+    ports:
+      - "5001:5001"
+    links:
+      - postgres-host:postgres-host
+      - discovery-host:discovery-host
+    depends_on:
+      - postgres-host
+      - discovery-host

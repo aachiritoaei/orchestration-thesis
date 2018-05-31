@@ -1,0 +1,10 @@
+version: '2'
+services:
+  discovery-host:
+    scale: 1
+  gateway-host:
+    scale: 1
+  postgres-host:
+    scale: 1
+  meta-host:
+    scale: 1

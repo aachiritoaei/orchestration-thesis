@@ -1,3 +1,45 @@
+server:
+  port: 5001
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-host:8761/eureka/
+
 spring:
   application:
     name: meta-server
+  # = DATA SOURCE
+  # Set here configurations for the database connection
+  datasource:
+    url: jdbc:postgresql://postgres-host:5432/postgres
+    username: postgres
+    password: mysecretpassword
+    driver-class-name: org.postgresql.Driver
+
+  # = JPA / HIBERNATE
+  # Show or not log for each sql query
+  # validate the schema, no changes to the database
+  # without it the application would start up even if the schema is not present
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+
+  # = FLYWAY
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+
+
