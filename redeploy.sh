@@ -1,8 +1,10 @@
 #!/bin/bash
 
-docker stop $(docker ps -aq) 
-docker rm $(docker ps -aq)
-docker rmi $(docker images -q)
+if [ $1 = "clean" ]; then
+	docker stop $(docker ps -aq) 
+	docker rm $(docker ps -aq)
+	docker rmi $(docker images -q)
+fi
 
 cd new-api-gateway
 mvn clean package
