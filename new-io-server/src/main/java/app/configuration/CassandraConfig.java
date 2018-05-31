@@ -46,15 +46,11 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
         return new String[]{"app.domain"};
     }
 
-//    @Bean
-//    public CassandraClusterFactoryBean cluster() {
-//        CassandraClusterFactoryBean cluster =
-//                new CassandraClusterFactoryBean();
-//        cluster.setContactPoints("localhost");
-//        cluster.setPort(9042);
-//        return cluster;
-//    }
 
+    @Override
+    protected String getContactPoints() {
+        return "cassandra-host";
+    }
 
     @Override
     protected QueryOptions getQueryOptions() {

@@ -1,12 +1,12 @@
 server:
-  port: 5000
+  port: 5002
 
 spring:
   application:
     name: io-server
 
 kafka:
-  bootstrap-servers: localhost:9092
+  bootstrap-servers: kafka-host:9092
   topic:
     kafka-io: kafka-io
 
@@ -15,4 +15,4 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+      defaultZone: http://discovery-host:8761/eureka/

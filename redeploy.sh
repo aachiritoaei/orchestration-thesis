@@ -22,4 +22,10 @@ docker build -t new-meta-server .
 
 cd ..
 
+cd new-io-server
+mvn clean package
+docker build -t new-io-server .
+
+cd ..
+
 docker-compose up
